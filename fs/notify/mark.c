@@ -356,7 +356,6 @@ bool fsnotify_prepare_user_wait(struct fsnotify_iter_info *iter_info)
 	int type;
 
 	fsnotify_foreach_obj_type(type) {
-
 		/* This can fail if mark is being removed */
 		if (!fsnotify_get_mark_safe(iter_info->marks[type])) {
 			__release(&fsnotify_mark_srcu);
